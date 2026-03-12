@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
               ),
               child: Column(
-                mainAxisSize: MainAxisSize.min, // Bottom sheet-ke content onujayi choto rakhbe
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   Text("Add a New Note", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                   SizedBox(height: 10),
