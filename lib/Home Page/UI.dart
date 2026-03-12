@@ -6,7 +6,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Note App", style: TextStyle(color: Colors.white),),
+        backgroundColor: Colors.teal,
+      ),
+      floatingActionButton: FloatingActionButton(onPressed: (){}, child: Icon(Icons.add),),
+      body: ListView.builder(
+
+        itemCount: 10,
+        itemBuilder: (context, index) {
+        return Card(child: ListTile(),);
+      },),
     );
   }
 }
