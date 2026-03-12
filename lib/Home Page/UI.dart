@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,7 +13,38 @@ class HomePage extends StatelessWidget {
         backgroundColor: Colors.teal,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.bottomSheet(
+            Container(
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min, // Bottom sheet-ke content onujayi choto rakhbe
+                children: [
+                  Text("Add a New Note", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  SizedBox(height: 10),
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: "Enter your note here...",
+                      border: OutlineInputBorder(),
+                    ),
+                    maxLines: 3,
+                  ),
+                  SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {
+                      Get.back();
+                    },
+                    child: Text("Save Note"),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
         child: Icon(Icons.add),
       ),
       body: ListView.builder(
