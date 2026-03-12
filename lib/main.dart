@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:noteapp/Home%20Page/UI.dart';
 
-import 'View/HomePage/UI.dart';
 
-void main()async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-   await Hive.initFlutter();
-   var myBox = await Hive.openBox("Note");
+  await Hive.initFlutter();
+  var myBox = await Hive.openBox("Note");
 
   runApp(const MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
@@ -18,11 +17,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-
-      home:  HomePage(),
-    );
+    return MaterialApp( home: HomePage());
   }
 }
-
