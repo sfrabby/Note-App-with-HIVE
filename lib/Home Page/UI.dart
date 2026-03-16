@@ -66,7 +66,7 @@ class HomePage extends StatelessWidget {
                         ),
                         onPressed: () {
                           // এখানে সেভ করার লজিক লিখবেন
-                          Get.back(); // শিট বন্ধ করার জন্য
+                          Get.back();
                         },
                         child: Text("Save Note"),
                       ),
@@ -75,11 +75,13 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            isScrollControlled: true, // এটি কীবোর্ডের জন্য স্পেস তৈরি করতে সাহায্য করে
+            isScrollControlled: true,
           );
         },
         child: Icon(Icons.add),
-      ),      body: ListView.builder(
+      ),
+
+      body: ListView.builder(
         itemCount: 10,
         itemBuilder: (context, index) {
           return Card(
